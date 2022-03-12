@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="login.css">
+</head>
+<body>
+
+    {% for message in messages %}
+    <div class="alert alert-{{ message.tags }} alert-dismissible fade show" role="alert">
+    <strong>Message:</strong> {{ message }}
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+    <span aria-hidden="true">&times;</span>
+    </button>
+    </div>
+  {% endfor %}
+
+    <div class="login-box">
+        <h1>Login/Signin</h1>
+        <form action="/signin" method="post">
+            {% csrf_token %}
+            <label>Username</label>
+            <input type="text" id="username" name="username" placeholder="Enter Your Username" Required>
+            <br>
+            <label>Password</label>
+            <input type="Password" id="password1" name="password1" placeholder="Enter Your Password" Required>
+            <br>
+            <button type="submit">Login</button>
+
+        </form>
+        <p>Not have an account? <a href="signup.html">Sign Up Here</a></p>
+    </div>
+</body>
+</html>
+
