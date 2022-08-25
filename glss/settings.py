@@ -10,6 +10,7 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/4.0/ref/settings/
 """
 
+import os
 from pathlib import Path
 from . info import *
 
@@ -32,6 +33,8 @@ SECRET_KEY = 'django-insecure-ghn46n4a^3f^^64=vv-6^b!z=bo!7yu7f8ah#in(4$i5b4vhfx
 DEBUG = True
 
 ALLOWED_HOSTS = []
+# if DEBUG:
+#     EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'#during dev. process
 
 
 # Application definition
@@ -54,6 +57,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    #'ana_access','django.contrib.auth',
 ]
 
 ROOT_URLCONF = 'glss.urls'
@@ -61,7 +65,7 @@ ROOT_URLCONF = 'glss.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': ["templates"],
+        'DIRS': [os.path.join(BASE_DIR, 'templates')], #["templates"],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -123,8 +127,12 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/4.0/howto/static-files/
 
 STATIC_URL = 'static/'
+STATICFILES_DIRS =[
+    os.path.join(BASE_DIR, 'static')
+]
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
