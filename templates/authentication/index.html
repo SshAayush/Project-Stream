@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
+body{
+    background-color: #2b1055;
+    font-family: 'Poppins',sans-serif;
+}
+.signup-box{
+    width: 360px;
+    height: 620px;
+    margin: auto;
+    color: #fff;
+     border-radius: 3px;   
+     background-color: #1c0522;;
+}
+
+.login-box{
+    width: 360px;
+    height: 600px;
+    background-color: #1c0522;
+    color: #fff;
+    margin: auto;
+    border-radius: 3;
+}
+
+h1{
+    text-align: center;
+    padding-top: 15px;
+}
+
+form{
+    width: 300px;
+    margin-left: 20px;
+    
+    
+}
+
+form label{
+    display: flex;
+    margin-top: 20px;
+    font-size: 18px;
+}
+
+form input{
+    width: 100%;
+    padding: 6px;
+    border: none;
+    border-radius: 5px;
+}
+
+.submit-btn{
+    margin-top: 20px;
+
+    
+    
+}
+p{
+    margin-left: 15px;
+    text-align: center;
+    padding-top: 20px;
+    font-size: 15px;
+}
+
+input[type="button"]{
+    width: 320px;
+    border: none;
+    color: white;
+    background-color: grey;
+    font-size: 18px;
+    font-weight: 600;
+    cursor: pointer;
+}
+p a{
+    color: gray;
+}
+    </style>
+    
+</head>
+<body>
+
+
+
+
+
+    <div class="login-box">
+        <h1>Welcome to the HomePage</h1>
+        <form>
+        {% csrf_token %}
+            <button type="submit"> <a href="/signup">SignUp</a></button>
+            <button type="submit"> <a href="/signin">SignIn</a></button>
+            <button type="submit"> <a href="/signout">SignOut</a></button>
+        </form>
+        <p>Not have an account? <a href="signup.html">Sign Up Here</a></p>
+    </div>
+
+    
+</body>
+</html>

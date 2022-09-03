@@ -1,0 +1,64 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"/>
+    <link rel="stylesheet" href="{% static 'home.css' %}">
+</head>
+
+<!--HTML body-->
+<body>
+    <section class="wrapper">
+        <div class = "linkers">
+            <div class="logo">
+                <img src="{% static 'logo.png' %}" alt="logo">
+            </div>
+            <nav class="nav-bar">
+                <a href="#">Movies</a>
+                <a href="#">Features</a>
+                <a href="#">Download</a>
+                <a href="#">News</a>
+            </nav>
+            <div class = "top-left">
+                <div class="form">
+                    <form action="/sign-in" method="post">
+                        <!-- {% csrf_token %}     -->
+                        <input type="text" placeholder="&#xF002; Search" style = "font-family:Arial, FontAwesome" onclick = "displayChoice()"/>    
+                    </form>
+                    <div id = "my-dropdown" class="dropdown">
+                        <select>
+                            <option value="">Ascending</option>
+                            <option value="">Descending</option>
+                            <option value="">Time</option>
+                        </select>
+                    </div>
+               </div>
+           </div>
+        </div>
+        <div class="body-content">
+            <div class="intro">
+                <h1> Project<span>Stream</span> marks the spot for free streaming.</h1><br>
+                <p>Say goodbye to free movie websites and hello to the app that brings you over 50,000<br> on-demand titles, plus live TV on all your favorite devices.</p>
+            </div>
+            <div class="image"></div>
+            <div class="sign-up">
+                <a href="/dashboard"><button class="btn"> Open PS </button></a>
+            </div>
+        </div>
+    </section>
+
+    <!--Javascript-->
+    <script>
+        const myDropdown = document.getElementById('my-dropdown');      // gets the element of id('ny-dropdown') and stores the element on myDropdown constant.
+
+        /* function to display selection option for dropdowns on click event*/
+        function displayChoice() {
+        myDropdown.classList.add('display');        //adds class of '.display' to the div with id of 'my-dropdown' when the 'search' input field is clicked..
+        }   
+    </script>
+</body>
+</html>
