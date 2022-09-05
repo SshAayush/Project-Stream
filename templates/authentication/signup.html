@@ -1,49 +1,74 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>login</title>
-    <link rel="stylesheet" href="authentication\templates\authentication\login.css">
-</head>
-<body>
-
-    {% for message in messages %}
-        <div class="alert alert-{{ message.tags }} alert-dismissible fade show" role="alert">
-        <strong>Message:</strong> {{ message }}
-        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+    <link rel="stylesheet" href="sign-in.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+      integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+  </head>
+  <body>
+    <!-- {% for message in messages %}
+    <div
+      class="alert alert-{{ message.tags }} alert-dismissible fade show"
+      role="alert"
+    >
+      <strong>Message:</strong> {{ message }}
+      <button
+        type="button"
+        class="close"
+        data-dismiss="alert"
+        aria-label="Close"
+      >
         <span aria-hidden="true">&times;</span>
-        </button>
-        </div>
-    {% endfor %}
-
-    <div class="signup-box">
-        <h1>Sign Up</h1>
-        <form action="/signup" method="post"> 
-        {% csrf_token %}
-            <label>Username</label>
-            <input type="text" id="username" name="username" placeholder="characters & numbers only">
-            <br>
-            <label>First Name</label>
-            <input type="text" id="fname" name="fname" placeholder="First Name">
-            <br>
-            <label>Last Name</label>
-            <input type="text" id="lname" name="lname" placeholder="Last Name">
-            <br>
-            <label>Email</label>
-            <input type="email" id="email" name="email" placeholder="E-mail">
-            <br>
-            <label>Password</label>
-            <input type="password" id="password1" name="password1" placeholder="Password">
-            <br>
-            <label>Confirm Password</label>
-            <input type="password" id="password2" name="password2" placeholder="Confirm Password">
-            <br>
-            <button type="submit"> SignUp</button>
-        </form>
-        <p>Already have an account? <a href="/signin">Login here</a></p>
+      </button> -->
     </div>
-    
-</body>
+    <!-- {% endfor %} -->
+    <div class="container">
+      <div class="forms-container">
+         <div class="signin-signup">
+           <form action="#" class="sign-in-form">
+             <h2 class="title">Sign in</h2>
+             <div class="input-field">
+               <i class="fas fa-user"></i>
+               <input type="text" placeholder="Username" />
+             </div>
+            <div class="input-field">
+              <i class="fas fa-lock"></i>
+              <input type="password" placeholder="password" />
+            </div>
+            <input type="submit" class="btn solid" value="Login" />
+          </form>
+        </div>
+        
+        <div class="signup-signup">
+          <form action="#" class="sign-up-form">
+            <h2 class="title">Sign in</h2>
+            <div class="input-field">
+              <i class="fas fa-user"></i>
+              <input type="text" placeholder="Username" />
+            </div>
+            <div class="input-field">
+              <i class="fas fa-envelope"></i>
+              <input type="email" placeholder="Email" />
+            </div>
+            <div class="input-field">
+              <i class="fas fa-lock"></i>
+              <input type="password" placeholder="password" />
+            </div>
+            <input type="submit" class="btn solid" value="Login" />
+          </form>
+        </div>
+      </div>
+     
+      <div class="panels-container"></div>
+    </div>
+  </body>
 </html>
