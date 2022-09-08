@@ -15,7 +15,7 @@ from django.utils.http import urlsafe_base64_encode, urlsafe_base64_decode
 from django.utils.encoding import force_bytes#,force_text
 #from .tokens import generate_token
 from django.core.mail import EmailMessage,send_mail
-from django.contrib.auth.decorators import login_required
+from django.contrib.auth.decorators import login
 # from django.contrib.auth.views import PasswordResetView
 #from django.utils.encoding import force_text
 #from django.utils.http import urlsafe_base64_decode, urlsafe_base64_encode
@@ -36,8 +36,7 @@ def home(request):
 
     return render(request, "authentication/landing.html")
     #return HttpResponse("Test")
-    
-@login_required(login_url="/signin")
+
 def dashboard(request):
     return render(request, "authentication/dashboard.html")
 

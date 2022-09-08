@@ -36,8 +36,7 @@ def home(request):
 
     return render(request, "authentication/landing.html")
     #return HttpResponse("Test")
-    
-@login_required(login_url="/signin")
+
 def dashboard(request):
     return render(request, "authentication/dashboard.html")
 

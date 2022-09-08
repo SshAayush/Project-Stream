@@ -47,7 +47,7 @@
             transition: all 0.3s;
         }
         a:hover {
-            color: #695cfe;
+            /* color: #BBB; */
             transition: var(--transition);
             border-bottom: 2px solid #695cfe;
         }

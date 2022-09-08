@@ -34,9 +34,9 @@
                 Say goodbye to free movie websites and hello to the app that brings you over 50,000 on-demand titles, plus live TV on all your favorite devices.
             </p>
             <div class="newslatter">
+                {% csrf_token %}
                <form action = "{% url 'home' %}" method ="POST">
                     <input type="email" name="email" id="mail" placeholder="Enter Your Email">
-                    {% csrf_token %}
                     <input type="submit" name="submit" value="Subscribe">
                 </form>
             </div>

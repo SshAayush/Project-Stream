@@ -1,5 +1,5 @@
 {% load static %}
-{% comment %} {% login_requiured (login_url='/signin') %} {% endcomment %}
+{% csrf_token %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -11,6 +11,7 @@
     <link href='https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css' rel='stylesheet'>
 </head>
 <body>
+    {% csrf_token %}
    <nav class="sidebar">
        <header>
           <div class="image-text">

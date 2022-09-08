@@ -45,9 +45,21 @@
                 <p>Say goodbye to free movie websites and hello to the app that brings you over 50,000<br> on-demand titles, plus live TV on all your favorite devices.</p>
             </div>
             <div class="image"></div>
-            <div class="sign-up">
-                <a href="/dashboard"><button class="btn"> Open PS </button></a>
-            </div>
+            {% comment %} <div class="sign-up">
+                <a href="/signin"><button class="btn"> Open PS </button></a>
+            </div> {% endcomment %}
+            <form action="/signin" method="post">
+                {% csrf_token %}
+                <label>Username</label>
+                <input type="text" id="username" name="username" placeholder="Enter Your Username" Required>
+                <br>
+                <label>Password</label>
+                <input type="Password" id="password1" name="password1" placeholder="Enter Your Password" Required>
+                <br>
+                <button type="submit">Login</button>
+    
+            </form>
+        </div>
     </section>
 
     <!--Javascript-->

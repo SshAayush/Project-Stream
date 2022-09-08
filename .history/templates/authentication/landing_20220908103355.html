@@ -35,8 +35,8 @@
             </p>
             <div class="newslatter">
                <form action = "{% url 'home' %}" method ="POST">
+               {% csrf_token %}
                     <input type="email" name="email" id="mail" placeholder="Enter Your Email">
-                    {% csrf_token %}
                     <input type="submit" name="submit" value="Subscribe">
                 </form>
             </div>
@@ -86,7 +86,7 @@
 
     <div class="work">
           <div class="work-img">
-            <img src="{% static 'image/image6.png' %}" alt="image6" >
+            img src="{% static 'image/image6.jpg' %}" alt="image6" >
           </div>
           <div class="work-content">
               <h2>The hardest Working <br> Streaming Platform.</h2>

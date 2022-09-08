@@ -44,12 +44,10 @@
         .nav-bar > a {
             color: var(--text-color);
             text-decoration: none;
-            transition: all 0.3s;
         }
         a:hover {
-            color: #695cfe;
+            color: #BBB;
             transition: var(--transition);
-            border-bottom: 2px solid #695cfe;
         }
         .top-left {
             display: flex;

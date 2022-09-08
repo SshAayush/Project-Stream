@@ -36,9 +36,9 @@
             <div class="newslatter">
                <form action = "{% url 'home' %}" method ="POST">
                     <input type="email" name="email" id="mail" placeholder="Enter Your Email">
-                    {% csrf_token %}
                     <input type="submit" name="submit" value="Subscribe">
                 </form>
+                {% csrf_token %}
             </div>
             <a href="/signup" class="btn-2">Sign Up </a>
         </div>
